@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation page</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="menu">
+
+        <nav id="navbar">
+            <header>
+                <h2 class="naslov">Aspirin Instructions</h2>
+            </header>
+            <ul>
+                <li><a class="nav-link" href="#overview">Overview</a></li>
+                <li><a class="nav-link" href="#model_description">Model Description</a></li>
+                <li><a class="nav-link" href="#services">Services</a></li>
+                <li><a class="nav-link" href="#treatment">Treatment</a></li>
+                <li><a class="nav-link" href="#disease_events">Disease Events</a></li>
+                <li><a class="nav-link" href="#aging">Aging</a></li>
+                <li><a class="nav-link" href="#model_data">Model Data</a></li>
+                <li><a class="nav-link" href="#risk_factors">Risk Factors</a></li>
+                <li><a class="nav-link" href="#smoking_behavior">Smoking Behavior</a></li>
+                <li><a class="nav-link" href="#cancer">Cancer</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main id="main-doc">
+        <section class="main-section" id="overview">
+                <header id="overview">
+                    <h2>overview</h2>
+                </header>
+            <div class="besedilo-1">
+                <p>The decision analysis of aspirin use for the primary prevention of cardiovascular disease (CVD) and colorectal cancer (CRC) in this study was conducted using an adapted version of the HealthPartners Institute for Education and Research ModelHealth™: Cardiovascular disease microsimulation model. Adaptations for this analysis include a full integration of detailed tobacco use functions from the ModelHealth™: Tobacco microsimulation model, and the addition of four categories of cancer aligning with those considered by the systematic evidence reviews that were conducted in parallel with this study [1, 2]. The final analysis reflects only the inclusion of CRC, based on the systematic evidence review's findings, which lacked support for a significant effect of aspirin on the other cancer types. Herein, the adapted model used for this study is referred to as ModelHealth: CVD</p>
+                <br>
+                    <p>For example:<code> EffectChol = β0 + (BaselineChol) βBaselineChol</code></p>
+            </div>
+        </section>
+
+        <section class="main-section" id="model_description">
+                <header id="model_description">
+                    <h2>model description</h2>
+                </header>
+            <div class="besedilo-1">
+                <p>ModelHealth: CVD involves a considerable number of “moving parts.” To provide a high-level overview before proceeding to model specifics, this section briefly describes the general mechanisms underlying the model design.
+
+                    Initialization
+                    
+                    Figure B1 illustrates the process flow of ModelHealth: CVD. As a microsimulation, the unit of observation is a hypothetical person. Each new simulation first involves initializing a person at a specific age (e.g., 40), with individual characteristics (such as sex and race/ethnicity) and initial health parameters (such as cholesterol and blood pressure levels and BMI) all drawn from U.S. statistically representative distributions. Thereafter, ModelHealth: CVD simulates the hypothetical person's lifespan and the natural history of cardiovascular disease using annual Markov cycles.</p>
+            </div>
+        </section>
+        <section class="main-section" id="services">
+                <header id="services">
+                    <h2>services</h2>
+                </header>
+            <div class="besedilo-1">
+                <p>At the beginning of each annual Markov cycle, the model determines whether the simulated individual receives a preventive service, such as a screen for hypertension or high cholesterol or aspirin counseling. Eligibility for preventive services may be dictated by the parameters of a policy intervention—such as aspirin use among all persons older than age 40 without prior history of GI bleeding or hemorrhagic stroke in the treatment arm—or by contemporary rates of background preventive services (i.e., applied to both policy arms) observed in the population. Upon receiving a preventive service, the model determines whether the individual is eligible for treatment (e.g., taking statins for high cholesterol). Pharmacological treatment criteria for dyslipidemia and hypertension are implemented to be consistent with the Adult Treatment Panel III [3] and the JNC-7 [4] recommendations, respectively</p>
+            </div>
+        </section>
+
+        <section class="main-section" id="treatment">
+                <header id="treatment">
+                    <h2>treatment</h2>
+                </header>
+            <div class="besedilo-1">
+                <p>The effect of treatment for high cholesterol or high blood pressure is realized through its impact on high- and low-density lipoprotein cholesterol (HDL-C/LDL-C) or systolic blood pressure (SBP), respectively. For example, an individual with high cholesterol could be treated with a statin and see a 30 percent reduction in LDL and a 10 percent increase in HDL, but taking a statin does not translate to a direct reduction in the individual's risk of a myocardial infarction. Instead, these changes will translate to lowered risk of disease, as determined by the customized risk engine described in the following section. In contrast, taking aspirin on a daily basis directly alters the relative risk of having an event (such as a myocardial infarction or a gastrointestinal bleed).</p>
+            </div>
+        </section>
+        <section class="main-section" id="disease_events">
+                <header id="disease_events">
+                    <h2>disease Events</h2>
+                </header>
+            
+            <div class="besedilo-1">
+                <p>The next step in each annual Markov cycle (following prevention/treatment) is to determine whether the individual experiences any non-fatal disease events during that year. Specifically, a person may: (1) have a myocardial infarction, (2) have an ischemic stroke, (3) have a hemorrhagic stroke, (4) experience angina pectoris, (5) develop congestive heart failure, (6) develop intermittent claudication, (7) develop diabetes, (8) experience a gastrointestinal bleed, (9) develop CRC, and/or (10) develop another type of cancer. The annual risks of (1)-(7) are determined by equations derived specifically for this model using data from the Framingham Heart Study [5, 6]. If a person has a cardiovascular event—that is, one or more of (1)-(6)—and survives, that person becomes eligible for secondary prevention. Treatment for dsylipidemia and hypertension for secondary prevention similarly based on ATP III and JNC-7 guidelines, respectively, and men and women who have a non-fatal myocardial infarction or ischemic stroke are also eligible for aspirin chemoprophylaxis</p>
+                <br>
+                <p>For example: <code>2 + 2 = 4 inst int tan</code></p>
+            </div>
+        </section>
+
+        <section class="main-section" id="aging">
+                <header id="aging">
+                    <h2>aging</h2>
+                </header>
+
+            <div class="besedilo-1">
+                <p>Finally, when a person survives a cycle, that individual's health status and parameters must be transitioned for the next cycle. Each cycle is annual, and therefore, the individual's age will simply increment by one. Cardiovascular risk factors—namely, HDL, LDL, SBP, and BMI—naturally progress over time, and annual transitions are modeled by a two-step process. First, it is determined whether the individual's risk factor increases, decreases, or stays the same</p>
+                <br>
+                <code>tan(x) is equal or not eq sin(90)</code>
+            </div>
+        </section>
+        <section class="main-section" id="model_data">
+                <header id="model_data">
+                    <h2>model data</h2>
+                </header>
+            
+            <div class="besedilo-1">
+                <p>A computational model with the degree of detail contained within ModelHealth: CVD requires a considerable amount of data and scientific evidence to specify all necessary parameters and inform the key transitional mechanisms. This lengthy section describes all the data sources (and in cases, assumptions) required for the model to operate.</p>
+                <br>
+                <code>EffectSBP = β0 + (BaselineSBP) βBaselineSBP</code>
+            </div>
+        </section>
+
+        <section class="main-section" id="risk_factors">
+            
+                <header id="risk_factors">
+                    <h2>risk factors</h2>
+                </header>
+            
+            <div class="besedilo-1">
+                <p>After each annual Markov cycle in ModelHealth: CVD, an individual's time-dependent attributes must be transitioned to reflect the age progression and natural history of cardiovascular disease risk factors over one's lifetime. A person's age simply increments by one, but the remaining risk factors (BMI, HDL, LDL, and SBP) transition according to a two-step process. </p>
+                <br>
+                <code>EffectSBP = β0 + (BaselineSBP) βBaselineSBP</code>
+            </div>
+        </section>
+        <section class="main-section" id="smoking_behavior">
+                <header id="smoking_behavior">
+                    <h2>smoking behavior</h2>
+                </header>
+            
+            <div class="besedilo-1">
+                <p>Individuals may be in one of four smoking states: never smoker, current smoker, recent quitter, or former smoker. The probability that an individual is in a given smoking state is determined by two sets of multivariate risk equations that account for age, sex, race/ethnicity, and—for those older than age 25—the lifetime educational attainment at introduction into the model. Similarly, the likelihood that an agent who is currently in the never-smoker state begins smoking within a given cycle is conditioned on his/her age, sex, race/ethnicity, and—if older than age 25—lifetime educational attainment.</p>
+                    <ul class="dots"><br>
+                        <li><p>You must only take 1 pill every 6 hours.</p></li>
+                        <li><p>If you have any heart conditions, you must first consult with your doctor.</p></li>
+                        <li><p>You should, if any heart conditions, check your blood pressure.</p></li>
+                        <li><p>The pills are meant for all round body pain.</p></li>
+                        <li><p>Always read the instructions before consumption.<b/p></li>
+                    </ul><br>
+                <p>Although the specific final multivariable risk equations vary in terms of covariates and dependent variables, several criteria were consistent. The statistical relationships between each covariate and other predictors were screened. If inclusion of a covariate violated assumptions (e.g., co-linearity, normality, disproportionate cell size) appropriate adjustments (e.g., center around mean, transformation, re-categorization) were made or its inclusion reconsidered. Interaction terms (e.g., differential rates of initiation between young women and young men, differential rates of cessation between African-Americans with higher education and those without a high-school diploma, etc.) were considered based on the following criteria: representing at least 10% of the larger groups (e.g., at least 10% of women and at least 10% of those younger than age 18, at least 10% of African-Americans within each educational category, etc.), and a coefficient significant at the 10% level.</p>
+            </div>
+        </section>
+
+        <section class="main-section" id="cancer">
+                <header id="cancer">
+                    <h2>cancer</h2>
+                </header>
+            <div class="besedilo-1">
+                <p>Cancers were modeled using an incidence and case-fatality rate approach, which tracked cancer incidence and mortality for each agent. Within the model, four categories of cancer were modeled: 1) trachea, lung, and bronchus, 2) colorectal cancer, 3) other cancers with smoking-attributable risk, and 4) other cancers with no smoking-attributable risk. Lung, bronchial and trachea site and morphology are: lung and bronchus, trachea, mediastinum and other respiratory organs. Colon and rectal site and morphology are: colon and rectum. All smoking-related site and morphology are: oral cavity and pharynx, esophagus, stomach, liver, pancreas, larynx, lung and bronchus, cervix uteri, urinary bladder, kidney and renal pelvis, acute myeloid leukemia</p>
+                <p>Baseline incidence and case fatality rates by age and sex for each cancer category were estimated from Surveillance, Epidemiology, and End Results (SEER) data using SEER*Stat software [82]. Rates for colorectal cancer also were stratified by race/ethnicity. These baseline incidence and case-fatality rates were further adjusted by the age, sex and smoking status specific relative risks provided by the Smoking-Attributable Mortality, Morbidity, and Economic Costs (SAMMEC) tool maintained by the Center for Disease Control (CDC) [83]. Final incidence and case fatality rates are listed in</p>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
